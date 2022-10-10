@@ -44,7 +44,7 @@ const controller = {
 	// Update - Form to edit
 	edit: (req, res) => {
 		idProducto =req.params.id;
-		prodObj = products.find(producto => idProducto == producto.id)
+		let prodObj = products.find(producto => idProducto == producto.id)
 		res.render("product-edit-form", {prodObj})
 	},
 
@@ -52,8 +52,23 @@ const controller = {
 
 	// Update - Method to update
 	update: (req, res) => {
-		let updatedProd = req.body;
-		console.log(updatedProd)
+		let id = req.params.id;
+		let prodObj = products.find(producto => idProducto == producto.id)
+		
+		let nuevoProd = {
+			id : prodObj.id,
+			...req.body,
+			image: prodObj.image
+		}
+
+		let newArrayProducts = products.map(producto => {
+			if(producto.id == nuevoProd.id){
+				producto = {...nuevoProd}	
+			}
+			return producto
+		})
+		fs.writeFileSync(productsFilePath, JSON.stringify(newArrayProducts, null, " "))
+		console.log(newArrayProducts)
 		res.redirect("/")
 	},
 
@@ -62,6 +77,8 @@ const controller = {
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		console.log(req.params.id)
+		let productosFinal = products.filter(producto => producto.id != req.params.id)
+		fs.writeFileSync(productsFilePath, JSON.stringify(productosFinal, null, " "))
 		res.redirect("/")
 	}
 

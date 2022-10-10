@@ -28,8 +28,8 @@
 								<img src="/images/products/<%=res.image%>" alt="imagen de producto">
 							</figure>
 							<article class="product-box_data">
-								<h2><%=res.price%></h2>
-								<span><%=res.discount%>></span>
+								<h2><%=(toThousand(res.price))%></h2>
+								<span><%=res.discount%> %</span>
 								<p><%=res.name%></p>
 								<i class="fas fa-truck"></i>
 							</article>

@@ -32,10 +32,12 @@
 								<b><%= prodObj.discount %></b>
 							</p>
 							<p class="product-detail-price">
+								
 								<%= prodObj.price %>
 							</p>
 							<p class="product-detail-price">
-								<%= prodObj.price %>
+								<% let precioFinal = prodObj.price - ((prodObj.price * prodObj.discount) / 100) %> 
+								<%= precioFinal%>
 							</p>
 
 						<ul class="actions-list">

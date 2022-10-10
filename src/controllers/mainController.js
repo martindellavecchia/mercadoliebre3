@@ -28,11 +28,11 @@ const controller = {
 search: (req, res) => {
 	let key = req.query.keywords
 	resultado = products.filter(producto => {
-		let bla = producto.name.includes(key)
-		return bla;
+		return producto.name.toLowerCase().includes(key)
+		
 	})
 	console.log(resultado)
-	res.render("results", {resultado:resultado})
+	res.render("results", {resultado:resultado, toThousand})
 
 }
 }
