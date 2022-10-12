@@ -22,17 +22,17 @@ const controller = {
 		});
 
 	
-	res.render("index", { visited, inSale} )
+	res.render("index", { visited, inSale, toThousand} )
 },
 
 search: (req, res) => {
-	let key = req.query.keywords
+	let key = req.query.keywords.toLowerCase()
 	resultado = products.filter(producto => {
 		return producto.name.toLowerCase().includes(key)
 		
 	})
 	console.log(resultado)
-	res.render("results", {resultado:resultado, toThousand})
+	res.render("results", {resultado:resultado, toThousand, key})
 
 }
 }

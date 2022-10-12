@@ -33,8 +33,21 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		let newProduct = req.body
-		console.log(newProduct)
+		let imagenCargada
+
+		if(req.files[0] != undefined){
+			imagenCargada = req.files[0].originalname
+		} else {
+			imagenCargada = "default-image.png"
+		}
+
+		let newProduct = {
+			id: products.length+1,
+			...req.body,
+			image : imagenCargada
+		}
+		products.push(newProduct)
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "))
 		res.redirect("/")
 		
 	},
@@ -55,10 +68,18 @@ const controller = {
 		let id = req.params.id;
 		let prodObj = products.find(producto => idProducto == producto.id)
 		
+		
+		let imagenCargada
+		if (req.files[0] != undefined){
+			imagenCargada = req.files[0].originalname
+		} else{
+			imagenCargada = "default.image.png"
+		}
+		
 		let nuevoProd = {
 			id : prodObj.id,
 			...req.body,
-			image: prodObj.image
+			image: imagenCargada
 		}
 
 		let newArrayProducts = products.map(producto => {
@@ -68,7 +89,7 @@ const controller = {
 			return producto
 		})
 		fs.writeFileSync(productsFilePath, JSON.stringify(newArrayProducts, null, " "))
-		console.log(newArrayProducts)
+		console.log(req.files)
 		res.redirect("/")
 	},
 

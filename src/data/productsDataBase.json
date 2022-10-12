@@ -3,10 +3,10 @@
   "id": 1,
   "name": "Cafetera Dolce Gusto",
   "price": "10000",
-  "discount": "15",
+  "discount": "30",
   "category": "visited",
   "description": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o price.",
-  "image": "img-cafetera-moulinex.jpg"
+  "image": "02_coffee.jpg"
  },
  {
   "id": 2,
@@ -142,5 +142,32 @@
   "category": "in-sale",
   "description": "Deja que la música dance cobre vida con EXTRA BASS™ Anima el ambiente con EXTRA BASS™1. Un radiador pasivo trabaja con el parlante monoaural para potenciar los tonos bajos y mejorar los graves, a pesar del tamaño compacto. ",
   "image": "img-parlante-sony.jpg"
+ },
+ {
+  "id": 17,
+  "name": "cafe en grano",
+  "price": "1000",
+  "discount": "0",
+  "category": "visited",
+  "description": "el mejor cafe",
+  "image": "b5.png"
+ },
+ {
+  "id": 18,
+  "name": "sarasa",
+  "price": "123",
+  "discount": "123",
+  "category": "visited",
+  "description": "123",
+  "image": "default-image.png"
+ },
+ {
+  "id": 19,
+  "name": "sarasa23",
+  "price": "dasdf",
+  "discount": "fdafdsf",
+  "category": "visited",
+  "description": "fadfasfadsf",
+  "image": "default-image.png"
  }
 ]

@@ -26,7 +26,7 @@
 							<img src="/images/products/<%=visitado.image%> " alt="imagen de producto">
 						</figure>
 						<article class="product-box_data">
-							<h2><%=visitado.price%></h2>
+							<h2><%=toThousand(visitado.price)%></h2>
 							<span><%=visitado.discount%></span>
 							<p><%=visitado.name%></p>
 							<i class="fas fa-truck"></i>
@@ -55,7 +55,7 @@
 							<img src="/images/products/<%=enVenta.image%>" alt="imagen de producto">
 						</figure>
 						<article class="product-box_data">
-							<h2><%=enVenta.price%></h2>
+							<h2><%=toThousand(enVenta.price)%></h2>
 							<span><%=enVenta.discount%></span>
 							<p><%=enVenta.name%></p>
 							<i class="fas fa-truck"></i>
